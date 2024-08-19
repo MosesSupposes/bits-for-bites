@@ -1,0 +1,28 @@
+{
+  "name": "bitsforbites.com",
+  "version": "1.0.0",
+  "description": "A SaaS that empowers restuarant owners to accept crypto as an alternative form of payment.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MosesSupposes/bits-for-bites.git"
+  },
+  "author": "MosesSupposes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MosesSupposes/bits-for-bites/issues"
+  },
+  "homepage": "https://github.com/MosesSupposes/bits-for-bites#readme",
+  "dependencies": {
+    "alchemy-sdk": "^3.4.1",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "dotenv": "^16.4.5",
+    "nodemon": "^3.1.4"
+  }
+}
