@@ -1,4 +1,3 @@
-import { Wallet } from "alchemy-sdk";
 import type { Alchemy } from "alchemy-sdk";
 import express from "express";
 import type { Express } from "express";
@@ -36,11 +35,6 @@ const alchemy: Alchemy = createAlchemyInstance();
  * Routes
  */
 
-const api = express.Router();
-
-// Remove the "/api" prefix from all routes
-app.use("/api", api);
-
 // Serve static files from the public directory
 app.use(express.static(path.join(import.meta.dirname, "public")));
 
@@ -52,6 +46,10 @@ app.get("/", (req, res) => {
 /**
  * Data Layer
  */
+
+const api = express.Router();
+// Remove the "/api" prefix from all routes
+app.use("/api", api);
 
 api.get("/", (req, res) => {
   res.send("API is working");
@@ -78,6 +76,10 @@ api.post("/buy-product", async (req, res) => {
     res.send("Error purchasing product. Try again later." + "Details: " + err);
   }
 });
+
+/**
+ * Fallback Middleware
+ */
 
 app.use(function NotFound(req, res, next) {
   console.log(req.url);
