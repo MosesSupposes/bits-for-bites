@@ -2,10 +2,11 @@
   "name": "bitsforbites.com",
   "version": "1.0.0",
   "description": "A SaaS that empowers restuarant owners to accept crypto as an alternative form of payment.",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "start": "node --experimental-strip-types --env-file=.env --watch index.ts",
+    "start:prod": "node --experimental-strip-types --env-file=.env.prod --watch index.ts"
   },
   "repository": {
     "type": "git",
